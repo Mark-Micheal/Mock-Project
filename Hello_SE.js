@@ -6,6 +6,7 @@ function f1(number){
     for(var i = 0; i < Team.length; i++){
         if(Team[i].length === number)
             return Team[i];
+            //returns the team member
     }
 }
 
