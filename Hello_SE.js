@@ -16,6 +16,10 @@ function f2(name){
 
 function f3(name,age){
     //Adel:change the name of the member who has the given name by adding the age given to him/her, ex: f3(lujine,20) returns Team=["lujine,20","shiko","Adel",etc..] 
+    for(var i = 0; i < Team.length; i++){
+        if(Team[i] ===name){
+           Team[i]=""+name+","+age ;
+    }
 }
 
 function f4(first,second){
