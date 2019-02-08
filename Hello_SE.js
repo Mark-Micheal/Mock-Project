@@ -3,7 +3,11 @@ console.log(Team)
 
 function f1(number){
     //Lujine:find the name in the team with number of letters equal to the number given
-    //comment
+    for(var i = 0; i < Team.length; i++){
+        if(Team[i].length === number)
+            return Team[i];
+            //returns the team member
+    }
 }
 
 function f2(name){
@@ -19,6 +23,7 @@ function f4(first,second){
    //Testing.
 }
 
+
 //Farid: sort the members of the team in descending order of name length using f1
 
 //Hosam: determine if we have any members who have the same name using f2
@@ -28,3 +33,5 @@ function f4(first,second){
 //Omar: determine if the result of any member's name combination is funny or not. it is funny if the name is more than 7 characters, using f4
 
 //Yasser: create a function that combines the results of Farid,Hosam,Adel,Ayman's functions and display the array
+
+//change here
