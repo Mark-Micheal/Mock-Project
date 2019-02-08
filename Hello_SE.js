@@ -16,6 +16,7 @@ function f3(name,age){
 
 function f4(first,second){
     //Ayman: combine the names of the team members having indices given by first and second in any way you like, ex: f4(0,1) returns "lujishiko"
+   //Testing.
 }
 
 //Farid: sort the members of the team in descending order of name length using f1
