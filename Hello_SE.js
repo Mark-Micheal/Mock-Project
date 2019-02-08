@@ -27,3 +27,5 @@ function f4(first,second){
 //Omar: determine if the result of any member's name combination is funny or not. it is funny if the name is more than 7 characters, using f4
 
 //Yasser: create a function that combines the results of Farid,Hosam,Adel,Ayman's functions and display the array
+
+//change here
