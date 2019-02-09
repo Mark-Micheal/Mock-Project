@@ -49,4 +49,4 @@ function f8()
 
 //Yasser: create a function that combines the results of Farid,Hosam,Adel,Ayman's functions and display the array
 
-//change here
+// new change
