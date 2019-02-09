@@ -12,6 +12,7 @@ function f1(number){
 
 function f2(name){
     //Shiko:find the team member position with the given name
+	// 7amada
 }
 
 function f3(name,age){
