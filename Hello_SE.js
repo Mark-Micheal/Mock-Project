@@ -19,6 +19,7 @@ function f3(name,age){
     for(var i = 0; i < Team.length; i++){
         if(Team[i] ===name){
            Team[i]=""+name+","+age ;
+        }
     }
 }
 
@@ -45,8 +46,19 @@ function mostafa()
 
 
 
-//Omar: determine if the result of any member's name combination is funny or not. it is funny if the name is more than 7 characters, using f4
+function f8()
+{
+    //Omar: determine if the result of any member's name combination is funny or not. it is funny if the name is more than 7 characters, using f4
+
+    var funny = false;
+
+    for (var i = 0; funny || i < Team.length; ++i)
+        for (var j = i; funny || j < Team.length; ++j)
+            funny |= f4(i, j).length > 7;
+
+    return funny;
+}
 
 //Yasser: create a function that combines the results of Farid,Hosam,Adel,Ayman's functions and display the array
 
-//change here
+// new change
