@@ -32,6 +32,18 @@ function f4(first,second){
 //Hosam: determine if we have any members who have the same name using f2
 
 //Mostafa: make sure each member's age is there in the list, if not, default is 20, using f3
+function mostafa()
+{
+    for (i=0;i<Team.length;i++)
+    {
+        if(Team[i].search(",")===-1)
+        {
+            f3(Team[i],20);
+        }
+    }
+}
+
+
 
 //Omar: determine if the result of any member's name combination is funny or not. it is funny if the name is more than 7 characters, using f4
 
