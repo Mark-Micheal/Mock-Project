@@ -52,8 +52,8 @@ function f8()
 
     var funny = false;
 
-    for (var i = 0; funny || i < Team.length; ++i)
-        for (var j = i; funny || j < Team.length; ++j)
+    for (var i = 0; !funny && i < Team.length; ++i)
+        for (var j = i; !funny && j < Team.length; ++j)
             funny |= f4(i, j).length > 7;
 
     return funny;
