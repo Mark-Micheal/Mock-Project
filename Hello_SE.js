@@ -12,6 +12,11 @@ function f1(number){
 
 function f2(name){
     //Shiko:find the team member position with the given name
+	for(var i = 0; i < Team.length; i++){
+        if(Team[i]. === name)
+            return i+1;
+            //returns the team member
+    }
 	// 7amada
 }
 
