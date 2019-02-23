@@ -1,13 +1,25 @@
-var express=require('express');
-var app=express();
-var externalEntities=require('./routes/api/externalEntities');
+const express = require('express');   // Import express
 
-app.use('/externalEntities',externalEntities);
+const admins = require('./routes/api/admins')
 
-app.get('/',(req,res) =>{
-    res.send(`<h1>WelcomeEE</h1>`)
-  })
-  
-  app.listen(8000,()=>{
-    console.log('The server is running');
-  })
+const app = express()                 // Create the app
+app.use(express.json())               // Use it with post
+
+
+
+app.get('/' , (req,res) => {
+    res.send(`
+        <h1> Welcome </h1>
+        <a href="/api/admins">Admins</a>
+    `);
+})
+
+app.use('/api/admins' , admins)
+
+app.use((req,res) => {
+    res.status(404).send({err:'error 404 object not found '});
+})
+
+const port = 3000;
+app.listen(port , () => console.log(`Server up and running on port ${port}`))
+
