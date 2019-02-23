@@ -4,11 +4,15 @@ const externalEntities=require('./routes/api/externalEntities');
 const admins = require('./routes/api/admins')
 
 app.use('/externalEntities',externalEntities);
-app.use('/admins' , admins)
+app.use('/admins', admins)
 
 app.get('/',(req,res) =>{
-    res.send(`<h1>WelcomeEE</h1>`)
+    res.send(`<h1>WelcomeEE</h1>
+    <a href="/admins">Admins</a></br>
+    <a href="/externalEntities">EE</a></br>`)
+    
   })
+
 
 app.use((req,res) => {
     res.status(404).send({err:'error 404 object not found '});
