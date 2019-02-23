@@ -11,15 +11,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 const admins = require('./routes/api/admins')
 // Use it with post  app.use(express.json())  
 app.use('/admins' , admins)
