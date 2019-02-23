@@ -4,11 +4,12 @@ const router = express.Router();
 
 const Admin = require('../../models/Admin');
 
+/*
 const admins = [
-    new Admin('Mohamed' ),
+    new Admin('Mohamed'),
     new Admin('Ahmed')
    ];
-
+*/
 router.get('/:id', (req, res) => {            //Read specific admin
     const adminId = req.params.id
     const admin = admins.find(admins => admins.id === adminId)
