@@ -10,8 +10,9 @@ const lawyers = require('./routes/api/lawyers')
 
 app.get('/',(req,res) => {
     res.send(`<h1>WelcomeEE</h1>
-    <a href="/admins">Admins</a></br>
-    <a href="/externalEntities">EE</a></br>`)
+    <a href="/api/admins">Admins</a></br>
+    <a href="/api/externalEntities">EE</a></br>
+    <a href="/api/lawyers">lawyers</a></br>`)
     
   })
   // Direct routes to appropriate files 
@@ -23,9 +24,6 @@ app.use((req, res) => {
   res.status(404).send({err: 'We can not find what you are looking for'});
 })
 
-app.use((req,res) => {
-    res.status(404).send({err:'error 404 object not found '});
-})
 
 const port = 8000;
 app.listen(port, () => { console.log(`Server is running on port ${port}`) })

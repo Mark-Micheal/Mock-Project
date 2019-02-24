@@ -14,9 +14,12 @@ const admins = [
 ];
 
 //default route
+/*
 router.get('/', (req, res) => {            //Read all admins
     res.send(admins)
 });
+*/
+router.get('/', (req, res) => res.json({data:admins}));
 
 router.get('/:id', (req, res) => {            //Read specific admin
     const adminId = req.params.id
