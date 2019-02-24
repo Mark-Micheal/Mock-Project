@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
+
 app.use(express.json());
 
 const externalEntities = require('./routes/api/externalEntities');
 const admins = require('./routes/api/admins')
 const reviewers = require('./routes/api/reviewers');
+const lawyers = require('./routes/api/lawyers')
+
 
 app.get('/',(req,res) => {
     res.send(`<h1>WelcomeEE</h1>
@@ -13,10 +16,15 @@ app.get('/',(req,res) => {
     <a href="/api/reviewers">Reviewer</a></br>`)
     
   })
-
+  // Direct routes to appropriate files 
+app.use('/api/lawyers', lawyers)
 app.use('/api/externalEntities',externalEntities);
 app.use('/api/admins', admins);
 app.use('/api/reviewers', reviewers);
+// Handling 404
+app.use((req, res) => {
+  res.status(404).send({err: 'We can not find what you are looking for'});
+})
 
 app.use((req,res) => {
     res.status(404).send({err:'error 404 object not found '});
