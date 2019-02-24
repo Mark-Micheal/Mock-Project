@@ -1,0 +1,25 @@
+{
+  "name": "mock-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "joi": "^14.3.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mark-Micheal/Mock-Project.git"
+  },
+  "author": "Mark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mark-Micheal/Mock-Project/issues"
+  },
+  "homepage": "https://github.com/Mark-Micheal/Mock-Project#readme"
+}
