@@ -13,30 +13,13 @@ const externalEntities = [
 ];
 
 
-/*
-router.use('/addEntity', function(req,res){
-res.send('addEntity.html')
-
-})
-*/
-
-/*
-router.post('/addEntity',function(req,res){
-    externalEntities.push({
-        ID:req.body.ID,
-        name:req.body.name,
-        phone:req.body.phone,
-        email:req.body.email
-    })
-    })
-*/
 
 // Reading an entity
 // this lists all our instances as hypertexts that redirects us to: /externalEntities/about/:id that you clicked on
     router.get('/',(req,res)=> {
         var data="";
         externalEntities.forEach(value => {
-            data +=`<a href="/externalEntities/about/${value.id}">${value.name}</a></br>` 
+            data +=`<a href="/api/externalEntities/about/${value.id}">${value.name}</a></br>` 
         });   
         res.send(data);
     })
@@ -62,7 +45,7 @@ router.post('/addEntity',function(req,res){
     router.get('/delete',(req,res)=> {
         var data="";
         externalEntities.forEach(value => {
-            data +=`<a href="/externalEntities/delete/${value.id}">${value.name}</a></br>` 
+            data +=`<a href="/api/externalEntities/delete/${value.id}">${value.name}</a></br>` 
         }); 
         res.send(data);
     })
@@ -71,7 +54,7 @@ router.post('/addEntity',function(req,res){
     router.get('/delete/:id',function (req,res) {
         const EEid = externalEntities.find(EEid=>EEid.id==req.params.id);
         externalEntities.splice(externalEntities.indexOf(EEid),1);
-        res.redirect('/externalEntities/delete')
+        res.redirect('/api/externalEntities/delete')
 
     } )
 
