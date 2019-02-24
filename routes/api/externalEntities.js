@@ -76,4 +76,66 @@ router.post('/addEntity',function(req,res){
     } )
 
 //router.get('/', (req, res) => res.json({ data: externalEntities }))
+
+// Creating a new external entity..
+router.post('/', (req, res) => {
+    const id = req.body.id;
+	const name = req.body.name;
+    const phone = req.body.phone;
+
+    const email = req.body.email;
+    
+
+	if (!id) return res.status(400).send({ err: 'ID field is required' });
+	if (typeof id !== "number") return res.status(400).send({ err: 'Invalid value for ID' });
+    
+
+    if (!name) return res.status(400).send({ err: 'Name field is required' });
+	if (typeof name !== "string") return res.status(400).send({ err: 'Invalid value for Name ' });
+	
+
+    if (!phone) return res.status(400).send({ err: 'Phone field is required' });
+    if (typeof phone !== "number") return res.status(400).send({ err: 'Invalid value for Phone' });
+    
+
+    if (!email) return res.status(400).send({ err: 'Email field is required' });
+    if (typeof email !== "string") return res.status(400).send({ err: 'Invalid value for Email' });
+    
+	
+	const newExternalEntity = {
+        id,
+        name,
+		phone,
+        email,
+    };
+    
+
+    externalEntities.push({
+        id:req.body.id,
+        name:req.body.name,
+        phone:req.body.phone,
+        email:req.body.email
+    })
+
+
+    return res.json({ data: newExternalEntity });
+    
+});
+
+
+// Updating an external entity's name,phone & email 
+router.put('/', (req, res) => {
+    const externalEntityId = req.body.id 
+    const updatedName = req.body.name
+    const updatedPhone = req.body.phone
+    const updatedEmail = req.body.email
+    const externalEntity = externalEntities.find(ExternalEntity => ExternalEntity.id === externalEntityId)
+    externalEntity.name = updatedName
+    externalEntity.phone = updatedPhone
+    externalEntity.email = updatedEmail
+    res.send(externalEntities)
+})
+
+
+
 module.exports = router;
