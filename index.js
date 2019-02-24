@@ -2,14 +2,17 @@ const express=require('express');
 const app=express();
 const externalEntities=require('./routes/api/externalEntities');
 const admins = require('./routes/api/admins')
+const investors = require('./routes/api/investors')
 
 app.use('/externalEntities',externalEntities);
 app.use('/admins', admins)
+app.use('/investors',investors)
 
 app.get('/',(req,res) =>{
     res.send(`<h1>WelcomeEE</h1>
     <a href="/admins">Admins</a></br>
-    <a href="/externalEntities">EE</a></br>`)
+    <a href="/externalEntities">EE</a></br>
+    <a href="/investors">Investors</a></br>`)
     
   })
 
