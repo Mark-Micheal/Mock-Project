@@ -77,11 +77,12 @@ router.post('/addEntity',function(req,res){
 
 //router.get('/', (req, res) => res.json({ data: externalEntities }))
 
-// Creating a new external entity
+// Creating a new external entity.
 router.post('/', (req, res) => {
     const id = req.body.id;
 	const name = req.body.name;
     const phone = req.body.phone;
+    
     const email = req.body.email;
     
 
