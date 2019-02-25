@@ -1,10 +1,12 @@
-const uuid = require('uuid')
+const uuidv4 = require('uuid/v4');
+
 class Investor {
-    constructor(name, age, email, phoneNumber) {
+    constructor(name, age, email) {
         this.name = name;
         this.age = age;
         this.email = email;
-        this.id = uuid.v4();
+        this.id = uuidv4();
+        
     };
 }
 
