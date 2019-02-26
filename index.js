@@ -7,6 +7,8 @@ const externalEntities = require('./routes/api/externalEntities');
 const admins = require('./routes/api/admins')
 const investors = require('./routes/api/investors')
 const lawyers = require('./routes/api/lawyers')
+const companies= require('./routes/api/companies')
+
 
 
 app.get('/',(req,res) => {
@@ -22,6 +24,7 @@ app.use('/api/lawyers', lawyers)
 app.use('/api/externalEntities',externalEntities);
 app.use('/api/admins', admins);
 app.use('/api/investors',investors)
+app.use('/api/companies',companies)
 
 // Handling 404
 app.use((req, res) => {
