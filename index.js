@@ -30,7 +30,7 @@ const port = 8000;
 app.listen(port, () => { console.log(`Server is running on port ${port}`) })
 
 
-// I pushed
+// I pushed into local then mergerd master
 // Use it with post  app.use(express.json())  
 
 
