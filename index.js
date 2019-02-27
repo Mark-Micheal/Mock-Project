@@ -7,6 +7,7 @@ const externalEntities = require('./routes/api/externalEntities');
 const admins = require('./routes/api/admins')
 const investors = require('./routes/api/investors')
 const lawyers = require('./routes/api/lawyers')
+const task = require('./routes/api/task')
 
 
 app.get('/',(req,res) => {
@@ -14,7 +15,8 @@ app.get('/',(req,res) => {
     <a href="/api/admins">Admins</a></br>,
     <a href="/api/externalEntities">EE</a></br>,
     <a href="/api/lawyers">lawyers</a></br>,
-    <a href="/api/investors">Investors</a></br>`)
+    <a href="/api/investors">Investors</a></br>
+    <a href="/api/tasks">Tasks</a></br>`)
     
   })
   // Direct routes to appropriate files 
@@ -22,6 +24,8 @@ app.use('/api/lawyers', lawyers)
 app.use('/api/externalEntities',externalEntities);
 app.use('/api/admins', admins);
 app.use('/api/investors',investors)
+app.use('/api/tasks',tasks)
+
 
 // Handling 404
 app.use((req, res) => {
