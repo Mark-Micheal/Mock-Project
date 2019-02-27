@@ -22,8 +22,8 @@ router.get('/', (req, res) => res.json({data:investors}));
 router.get('/:id', (req,res)=> 
 {   
     const investorId = req.params.id;
-    const returned = investors.find_by_uuid(investor => investor.id === investorId)
-    res.send(returned);
+    const returned = investors.find(investor => investor.id === investorId)
+    res.json(returned);
 })
 
 // Creating a new investor.
@@ -59,7 +59,7 @@ router.put('/', (req, res) => {
     const newName = req.body.name;
     const newAge = req.body.age;
     const newEmail = req.body.email;
-    const investorToBeUpdated = investors.find_by_uuid(Investor => Investor.id === id);
+    const investorToBeUpdated = investors.find(Investor => Investor.id === id);
     investorToBeUpdated.name = newName;
     investorToBeUpdated.age = newAge;
     investorToBeUpdated.email = newEmail;
@@ -68,6 +68,17 @@ router.put('/', (req, res) => {
 
 
 })
+
+//Delete a specific investor with ID in URL. 
+router.delete('/:id', (req,res)=> 
+{   
+    const investorId = req.params.id;
+    const index = investors.findIndex(investor => investor.id === investorId);
+    investors.splice(index,1)
+    res.send(investors);
+})
+
+
 
 module.exports = router;
 
