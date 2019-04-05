@@ -6,18 +6,28 @@ class App extends Component {
     todos: [
       {
         id: 1,
-        title: "task 1",
-        completed: false
+        title: "company 1",
+        completed: false,
       },
       {
         id: 2,
-        title: "task 2",
-        completed: false
+        title: "company 2",
+        completed: true,
       },
       {
         id: 3,
-        title: "task 3",
-        completed: false
+        title: "company 3",
+        completed: false,
+      },
+      {
+        id: 4,
+        title: "company 4",
+        completed: false,
+      },
+      {
+        id: 5,
+        title: "company 5",
+        completed: true,
       }
     ]
   }
@@ -31,8 +41,8 @@ class App extends Component {
     }) })
   }
   
-  delTodo = (id) => {
-    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] })
+  status = (id) => {
+    
   }
 
   render() {
@@ -41,7 +51,7 @@ class App extends Component {
         <Header/>
           <Todo todos = {this.state.todos}
            markComplete={this.markComplete}
-           delTodo={this.delTodo} />
+           status={this.status} />
       </div>
     );
   }
